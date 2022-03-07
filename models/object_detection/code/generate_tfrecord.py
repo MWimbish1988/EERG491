@@ -19,8 +19,7 @@ import tensorflow as tf
 import tensorflow.compat.v1 as tf
 import sys
 
-#sys.path.append("../../models/research")
-sys.path.append("User/wimbime1/Desktop/Python/Miguel_SelfDriving_Car/DeepPiCar/models_/research")
+sys.path.append("../../models/research")
 
 from PIL import Image
 from object_detection.utils import dataset_util
@@ -104,7 +103,7 @@ def create_tf_example(group, path, label_map):
     )
     return tf_example
 
-'''
+
 def main(_):
     writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
     path = os.path.join(os.getcwd(), FLAGS.img_path)
@@ -130,20 +129,8 @@ def main(_):
     writer.close()
     output_path = os.path.join(os.getcwd(), FLAGS.output_path)
     print("Successfully created the TFRecords: {}".format(output_path))
-'''
 
-def main(_):
-    path_ = '/Users/wimbime1/Desktop/Python/Miguel_SelfDriving_Car/models/object_detection/'
-    writer = tf.python_io.TFRecordWriter('data/test.record') #FLAGS.output_path
-    path = os.path.join('images/test') #FLAGS.image_dir
-    examples = pd.read_csv('data/test_labels.csv') # FLAGS.csv_input
-    grouped = split(examples, 'filename')
-    for group in grouped:
-        tf_example = create_tf_example(group, path)
-        writer.write(tf_example.SerializeToString())
-    writer.close()
-    output_path = os.path.join(os.getcwd(), 'data/test.record') #FLAGS.output_path
-    print('Successfully created the TFRecords:'.format(output_path))
+
 
 if __name__ == "__main__":
     tf.app.run()
