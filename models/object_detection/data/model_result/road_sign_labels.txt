@@ -1,8 +1,8 @@
-0 Green Light
-1 Person1
-2 Person2
-3 Person3
-4 Red Light
-5 Speed Limit 15
-6 Speed Limit 30
-7 Stop Sign
+Green Light
+Person1
+Person2
+Person3
+Red Light
+Speed Limit 15
+Speed Limit 30
+Stop Sign
